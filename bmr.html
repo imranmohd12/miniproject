@@ -1,0 +1,548 @@
+<!doctype html>
+<html>
+    <head>
+        <title>BeingFit</title>
+        <link href="bmr.css" rel="stylesheet" type="text/css">
+        <link rel="icon" type="image/png" href="favicon.ico">
+        <script src="jquery.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.5.0/css/bootstrap4-toggle.min.css" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.5.0/js/bootstrap4-toggle.min.js"></script>
+        <script src="calculate.js"></script>
+        <script src="index.js" type="text/javascript"></script>
+    </head>
+    <style>
+         
+    </style>
+<body>
+        <!--div style="display:flex;flex-direction:column;"-->
+    <nav>
+        <h1 id="beingfit" onclick="location.href='index.html'"><span style="background-image:linear-gradient(to right,black,darkgray);border-radius:0px 7px 7px 0px;font-family: myfont;">Being</span><span style="color:#40c4ff;">Fit</span><div style="float:right;">
+                
+                <a href="index.html" class="navopt">HOME</a>
+                <a href="" class="navopt">FITNESS CALCULATORS</a>
+                <a href="nutrition.php" class="navopt">FOOD & NEUTRITION</a>
+                <a href="body.php" class="navopt">BODY & EXCERCISE</a>
+                <a href="#about" class="navopt">ABOUT US</a></div></h1>
+    </nav>
+    
+    <center>
+         <div id="maincont">
+             <br>
+             <br>
+             
+                
+            <div class="container text-left" style="min-width:80%;">
+                
+             <div id="rect">BMR</div>
+            <div>
+               <br>
+                <br>
+                BMR stands for <b>BASAL METABOLIC RATE</b><br>
+                <div id="sub">
+                    <br>
+                    <div id="subrect">What is BMR?</div>
+                    <br>
+                    <br>
+                    <p>
+                        Even when resting, your body burns calories by performing basic functions to sustain life, such as:
+                    </p>
+                    <ul>
+                        <li>breathing</li>
+                        <li>circulation</li>
+                        <li>nutrient processing</li>
+                        <li>cell production</li>
+                    </ul>
+                    <p>
+                        Basal metabolic rate is the number of calories your body needs to accomplish its most basic (basal) life sustaining functions.
+                    </p>
+                
+                <div id="subrect">why you have to know your BMR?</div>
+                    <br>
+                    <br>
+                    <p>Your BMR can be used to help you gain, lose, or maintain your weight. By knowing how many calories you burn, you can know how many to consume. To put it simply:
+                    </p>
+                    <ul>
+                        <li>Is your goal to maintain your weight? Consume the same number of calories that you burn.</li>
+                        <li>Is your goal to gain weight? Consume more calories than you burn.</li>
+                        <li>Is your goal to lose weight? Consume fewer calories than you burn.</li>
+                    </ul>
+                    <p>Below BMR calculator helps you to calculates your daily calories and it also gives the calories according to your Activity lavel.</p>
+                </div>
+            </div>
+            </div>
+            <div class="row container bmr">
+            <div class="col-6">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-8 col-lg-8 col-xl-6">
+                    <div class="row">
+                        <div class="col-12 text-center" style="background-color: #40c4ff;color:white">
+                            <h5 class="text-h1">BMR CALCULATOR</h5>
+                            <p class="text-h3">Calculate Calories</p>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-3 custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" id="bmrmale" name="bmrgender" checked="checked">
+                            <label class="custom-control-label" for="bmrmale">Male</label>
+                        </div>
+                        <div class="col-3 custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" id="bmrfemale" name="bmrgender" checked="checked">
+                            <label class="custom-control-label" for="bmrfemale">Female</label>
+                        </div>
+                    </div>
+                    <div  class="row">
+                        <div class="col mt-4"> 
+                        <input type="text" class="form-control" placeholder="Weight" id="bmrwt">
+                        </div>
+                        <div class="col row mt-4">
+                        <div class="mt-2 col-1 custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" id="bmrkg" name="bmrwt" onclick="bmrkg()">
+                            <label class="custom-control-label" for="bmrkg">kg</label>
+                        </div>
+                        <div class="mt-2 col-1 custom-control custom-radio custo    m-control-inline">
+                            <input type="radio" class="custom-control-input" id="bmrlbs" name="bmrwt" onclick="bmrlbs()">
+                            <label class="custom-control-label" for="bmrlbs">lbs</label>
+                        </div>
+                    </div>
+                    </div>
+                    <div  class="row">
+                        <div class="col mt-4"> 
+                        <input type="text" class="form-control" placeholder="Height" id="bmrht">
+                        </div>
+                        <div class="col row mt-4">
+                        <div class="mt-2 col-1 custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" id="bmrcms" name="bmrheight" onclick="bmrcms()">
+                            <label class="custom-control-label" for="bmrcms">Cm</label>
+                        </div>
+                        <div class="mt-2 col-1 custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" id="bmrfeet" name="bmrheight" onclick="bmrfeet()">
+                            <label class="custom-control-label" for="bmrfeet">ft</label>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                        <p class="text-h6 ">(e.g 5'6" fill it as 5.6 in feets)</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                        <p class="text-h3">Age : <span id="op"></span></p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                        <input type="range" min="1" max="100" value="21" id="bmrage" class="slider">
+                        </div>
+                    </div>
+                    <script>
+                        var slider=document.getElementById("bmrage");
+                        var output=document.getElementById("op");
+                        output.innerHTML=slider.value;
+                        slider.oninput = function() {
+                        output.innerHTML = this.value;
+                        }
+                    </script>
+                    <div class="row mt-4">
+                        <div class="col">
+                        <input type="button" class="btn btn-primary btn-block" value="Calculate" onclick="bmr()">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="col-6 sub">
+                <p class="text-center text-h3">Your Body Metabolic Rate at Rest conditions</p>
+                <h1 style="color:#40c4ff;" id="bmrop"></h1>
+                <br><br>
+                <table class="table align-content-center">
+                    <thead>
+                        <tr>
+                            <th>Activity level</th>
+                            <th>Excercise per week</th>
+                            <th>Calories</th>
+                        </tr>    
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>sedentary</td>
+                            <td>No Excercise</td>
+                            <td id="sedentary" class="tcolor"></td>
+                            
+                        </tr>    
+                        <tr>
+                            <td>Mild level </td>
+                            <td>1-3 days(20min)</td>
+                            <td id="mild" class="tcolor"></td>
+                            
+                        </tr>
+                        <tr>
+                            <td>Moderate level</td>
+                            <td>3-4 days(60min)</td>
+                            <td id="moderate" class="tcolor"></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>Heavy level</td>
+                            <td>5-7 days</td>
+                            <td id="heavy" class="tcolor"></td>
+                        </tr>
+                        <tr>
+                            <td>Extreme level</td>
+                            <td>Athletes</td>
+                            <td id="extreme" class="tcolor"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="container text-left">
+            <div class="row">
+            <p id="rect">BMI</p>
+            </div>
+            <div class="row">
+            <p>BMI stands for <b>BODY MASS INDEX</b></p>
+            </div>
+            <div class="row">
+            <p id="rect">What is BMI ?</p>
+            </div>
+            <div class="row">
+            <p>BMI is a screening tool that can indicate whether a person is underweight or if they have a healthy weight, excess weight, or obesity. If a person's BMI is outside of the healthy range, their health risks may increase significantly.</p>
+            </div>
+            <div class="row">
+            <p id="rect">Why we have to calculate BMI ?</p>
+            </div>
+            <div class="row">
+            <p>BMI is number which can be calculated using below calculator.The number give us the health conditions.This number will help to setup to improve our health conditions.</p>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                <table class="table table-bordered" style="font-size:14px;">
+                    <thead style="background-color:#40c4ff;color:white;">
+                        <tr>
+                        <th>BMI</th>
+                        <th>Weight Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <td>Below 18.5</td>
+                        <td>Underweight</td>
+                        </tr>
+                        <tr>
+                        <td>18.5-24.9</td>
+                        <td>Healthy</td>
+                        </tr>
+                        <tr>
+                        <td>25-29.9</td>
+                        <td>Overweight</td>
+                        </tr>
+                        <tr>
+                        <td>30.0 and above</td>
+                        <td>Obese</td>
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
+            </div>
+        </div>
+        <div class="container row bmi ">
+      <div class="col-6 sub">
+        <div class="row">
+            <div class="col">
+                <P id="rect">BMI CALCULATOR</P>
+            </div>  
+        </div>
+        <div class="row mt-4">
+                    <div class="col">
+                    <input type="text" class="form-control" placeholder="Weight" id="bmiwt">
+                    
+                    </div>
+                    <div class="col row">
+                        <div class="mt-2 col-1 custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" id="bmikg" name="bmiwt" onclick="bmikg()">
+                            <label class="custom-control-label" for="bmikg">kg</label>
+                        </div>
+                        <div class="mt-2 col-1 custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" id="bmilbs" name="bmiwt" onclick="bmilbs()">
+                            <label class="custom-control-label" for="bmilbs">lbs</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col">
+                    <input type="text" class="form-control" placeholder="Height" id="bmiht">
+                    </div>
+                    <div class="col row">
+                        <div class="mt-2 col-1 custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" id="bmicms" name="height" onclick="bmicms()">
+                            <label class="custom-control-label" for="bmicms">Cm</label>
+                        </div>
+                        <div class="mt-2 col-1 custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" id="bmifeet" name="height" onclick="bmifeet()">
+                            <label class="custom-control-label" for="bmifeet">ft</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p class="text-h6 text-left">(e.g 5'6" fill it as 5.6 in feets)</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-9">
+                    <input type="button" class="btn btn-primary btn-block" value="Calculate" onclick="bmi()">
+                    </div>
+                </div>
+      </div>
+        
+      <div div="col-6 sub">
+            <div class="row">
+                <p>Your BMI is </p>
+            </div>
+            <div class="row">
+                <h1 id="bmiop" class="tcolor"></h1>
+            </div>
+            <div class="row">
+                <h1 id="status"></h1>
+            </div>
+        </div>
+
+    </div>
+        
+        <div class="container text-left">
+            <div class="row">
+                <div class="col">
+                    <p id="rect">FAT PERCENTAGE CALCULATION</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p>The body contains muscle mass and fat.The more fat means more risk to health.So To maintain the Fat percentage we need to keep tracking of our body fat percentage.There are several methods out there to find out our body fat percentage.</p>
+                    <ul class="list">
+                        <li>Skin fold</li>
+                        <li>Bioelectrical Impedance Analysis (BIA)</li>
+                        <li>Dual-energy X-ray absorptiometry(DEXA)</li>
+                        <li>Hydrodensitometry</li>
+                        <li>Air displacement plethysmography</li>
+                        <li>Bioimpedance Spectroscopy (BIS)</li>
+                        <li>etc..</li>
+                    </ul>
+                    <p>In above methods except skinfold are unavailable for general public and not economical.some are inadequate for correct fat percentage calculation.Skinfold or Skinpinch method easy and almost accurate method for fat percentage calculation.</p>
+                </div>
+                </div>
+            <div class="row">
+                <div class="col">
+                    <p id="rect">SkinFold</p>
+                </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                    <p>SkinFold,As name suggests Here we fold the skin take the measurements at some specific locations using measuring tool "skinfold caliper".</p>
+                    </div>
+                </div>
+            
+            <div class="row">
+                <div class="col-8">
+                    
+                        <div class="row">
+                            <div class="col">
+                            <p id="rect">SKINFOLD CALIPER</p>
+                            </div>
+                       </div>
+                        <div class="row">
+                            <div class="col">
+                            <p>Skin fold caliper image shown in the left.The average level caliper prices between 500 to 800 Rs.</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <p id="rect" style="margin-left: 15px;">How to measure?</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <p style="margin-left: 15px;">You need to firmly grasp a fold of your client’s skin between your thumb and index finger and lift this up.  The skinfold should include two thicknesses; one of skin and one of the subcutaneous fat, but no muscle or fascia. </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <p id="rect" style="margin-left: 15px;">Some Keypoints to be considered</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <ul style="margin-left: 15px;">
+                                    <li>Take all skinfolds on the right side of the body (for reliability)</li>
+                                    <li>Keep the fold elevated while the measurement is recorded.</li>
+                                    <li>Take the skinfold measurement 4 seconds after the calliper pressure is released.</li>
+                                    <li>Take a minimum of two measurements at each site.  The acceptable range between repeated measures is 1mm.  If the values vary by more than 1mm take an additional measurement and use the average of the three measurements.</li>
+                                    <li>Skinfold measurements should not be taken when the skin is wet or after exercise.</li>
+                                </ul>
+                            </div>
+                        </div>
+                </div>
+                <div class="col-3">
+                    <img src="skinpinch.jpg" height="240px" width="200px" class="imgframe" title="SkinFold Caliper">
+                </div>    
+             </div>
+            <div class="row mt-4">
+                <div class="col">
+                    <p id="rect">How to calcute?</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p>The best time to calculate your fat percentage is right after wakeup in the morning.This time our body been in fast for over night and our body does not hold up more water.So we can calculate more accurate number of our body fat percentage</p>
+                    <p>There are different sites in our body to be measure according to the gender.For men there will different sites for women will be different.Here we are using 3 sites calculation method.</p>
+                    <p class="mt-4">Below pictures shows measuring sites according to the gender.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p id="rect">Measuring sites for men</p>
+                </div>
+            </div>
+            
+			 <div class="row mt">
+				<div class="col-3">
+					<img src="chestmen.jpg" height="200px" width="200px" class="imgframe" title="chest">
+				</div>
+				<div class="col-3">
+					<img src="abdominalmen.jpg" height="200px" width="200px" class="imgframe" title="abdominal">
+				</div>
+				<div class="col-3">
+					<img src="thighmen.jpg" height="200px" width="200px" class="imgframe" title="thigh">
+				</div>
+			 </div>
+            <div class="row mt-4">
+                <div class="col">
+                    <p id="rect">Measuring sites for women</p>
+                </div>
+            </div>
+            <div class="row mt-4">
+				<div class="col-3">
+					<img src="tricepwomen.jpg" height="200px" width="200px" class="imgframe" title="tricep">
+				</div>
+				<div class="col-3">
+					<img src="suprialiacwomen.jpg" height="200px" width="200px" class="imgframe" title="suprialiac">
+				</div>
+				<div class="col-3">
+					<img src="thighwomen.jpg" height="200px" width="200px" class="imgframe" title="thigh">
+				</div>
+			 </div>
+            </div>     
+        
+        
+        <div class="container row bmi">
+            <div class="skin col">
+                <div class="row">
+                    <div class="col">
+                        <h4 id="rect" class="text-h1">Fat Calculator</h4>
+                    </div>
+                </div>
+
+                <div class="row mt-4"> 
+                        <div class="col-4 custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input text-right" id="male1" name="skingender" onclick="checkmale()" checked="checked" checked>
+                            <label class="custom-control-label" for="male1">Male</label>
+                        </div>
+                        <div class="col-4 custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" id="female1" name="skingender" onclick="checkfemale()">
+                            <label class="custom-control-label" for="female1" checked="checked">Female</label>
+                        </div>
+                </div>
+                <div class="row mt-4">
+                        <div class="col">
+                        <p class="text-h3 text-left">Age : <span id="op1"></span></p>
+                        </div>
+                </div>
+                
+                <div class="row">
+                        <div class="col">
+                        <input type="range" min="1" max="100" value="21" id="age1" class="slider">
+                        </div>
+                </div>
+                <script>
+                        var slider1=document.getElementById("age1");
+                        var output1=document.getElementById("op1");
+                        output1.innerHTML=slider.value;
+                        slider1.oninput = function() {
+                        output1.innerHTML = this.value;
+                        }
+                </script>
+                <div class="row mt-4">
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="Chest" id="loc1">
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col ">
+                        <input type="text" class="form-control" placeholder="Abdominal" id="loc2">
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col ">
+                        <input type="text" class="form-control" placeholder="Thigh" id="loc3">
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col">
+                    <input type="button" class="btn btn-primary btn-block" value="Calculate" onclick="calfat()">
+                    </div>
+                </div>
+            </div>
+            <div class="col exe">
+                <div class="row">
+                <p class="text-h6">Your fat percentage is </p>
+                </div>
+                <div class="row">
+                <h1 class="text-h1 tcolor" id="skinop"></h1>
+                </div>
+                <div class="row">
+                    <table class="table" style="font-size:12px;">
+                        <thead style="background-color:#40c4ff;color:white;">
+                            <tr>
+                                <th>Status</th>
+                                <th>Women (fat %)</th>
+                                <th>Men (fat %)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Essential Fat</td>
+                                <td>10-12%</td>
+                                <td>2-4%</td>
+                            </tr>
+                            <tr>
+                                <td>Athletes</td>
+                                <td>14-20%</td>
+                                <td> 6-13%</td>
+                            </tr>
+                            <tr>
+                                <td>Fit</td>
+                                <td>21-24%</td>
+                                <td>14-17%</td>
+                            </tr>
+                            <tr>
+                                <td>Acceptable</td>
+                                <td>25-31%</td>
+                                <td>18-25%</td>
+                            </tr>
+                            <tr>
+                                <td>Obese</td>
+                                <td>32% plus</td>
+                                <td>25% plus</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>  
+        </center>
+        <!--/div-->
+    </body>
+</html>

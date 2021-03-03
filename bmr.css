@@ -1,0 +1,249 @@
+
+@font-face {
+font-family: limelight;
+src: url(Limelight.ttf)format("ttf");
+}
+@font-face {
+font-family: bunya;
+src: url(bunya.ttf)format("ttf");
+}  
+body{
+    margin:0px;
+    padding: 0px;
+    background-color: white;
+    font-family: sans-serif;
+}
+nav{
+    display:inline-block;
+    background-color: black;
+    height: auto;
+    animation: 1s ease-in-out 0s light;
+    width: 100%;
+    
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+a{
+    
+}
+#beingfit{
+    /*padding-left:10px;
+    padding-bottom: 10px;*/
+    font-size: 25px;
+    font-family:bunya;
+    color: white;
+    
+}
+.navopt{
+    display: inline;
+    font-size:50%;
+    text-decoration: none;
+    color: white;
+    border-right:0px solid white;
+    margin-bottom:0;
+    transition: 1s ease-in-out;
+    font-family: myfont;
+    font-weight: lighter;
+    padding:5px;
+   
+}
+.navopt:hover{
+    background-color: white;
+    color: black;
+    box-shadow: 0px 10px 15px #40c4ff;
+    text-decoration: none;
+}
+@keyframes light{
+    0% {transform: translateX(-100%);}
+    70% {transform: translateX(10%);}
+    100% {transform: translateX(0);}
+}
+.bmr{
+    position: relative;
+    margin: 50px;
+    display:inline-flex;    
+    width:100%;
+    background-color: white;    
+    box-shadow: 0px 20px 15px darkgray;
+    align-self: center;
+    padding:25px;
+}
+.bmi{
+    position: relative;
+    margin: 50px;
+    display:inline-flex;
+    flex-direction: row;
+    width:100%;
+    background-color: white; 
+    box-shadow: 0px 20px 15px darkgray;
+    align-self: center;
+   padding:20px;
+}
+.fatper{
+    position: relative;
+    margin: 50px;
+    display:inline-flex;
+    flex-direction: row;
+    width:70%;
+    height:500px;
+    background-color: white; 
+    box-shadow: 0px 20px 15px darkgray;
+   
+   
+    
+}
+@keyframes topup{
+    0%{transform: translateY(100%);}
+    70%{transform: translateY(-7%);}
+    100%{transform: translateY(0%);}
+}
+.left{
+    width:50%;
+    height:100%;
+    background-color: white;
+    padding-left:5px;
+    border-left: 1px solid gray;
+}
+.right{
+    width:50%;
+    height: 100%;
+    background-color: #40c4ff;
+  
+    
+}
+
+
+#tabnav{
+    display: flex;
+    flex-direction: row;
+    padding: 0px;
+    position: relative;
+    border-bottom: 1px solid black;
+}
+#tab2{
+    display: none;
+    
+}
+#metric{
+    border:1px solid black;
+    border-bottom:0px solid black;
+    padding: 5px;
+    margin-left: 0px;
+    margin-bottom: 0px;
+    
+}
+#imperial{
+    border:1px solid black;
+    border-bottom:0px solid black;
+    padding: 5px;
+}
+#maincont{
+    animation: 1s ease-in-out 0s topup;
+}
+#triangle-right {
+      width: 0;
+      height: 0;
+      border-top: 25px solid transparent;
+      border-left: 50px solid #40c4ff;
+      border-bottom:25px solid transparent;
+      float:left;
+    }
+#rect{
+    padding:5px;
+    border-radius: 3px;
+    background-color: #40c4ff;
+    float: left;
+    color:white;
+    position: block;
+}
+
+#text{
+  text-align:center;
+  color:white;
+}
+#bmrinfo
+{
+    width:80%;
+    border: 1px solid black;
+    display: block;
+    text-align:left;
+}
+#subrect
+{
+    padding:5px;
+    border-radius:4px;
+    background-color: darkgray;
+    color: white;
+    float:left;
+}
+#sub
+{
+    margin-left: 10px;
+}
+.sub{
+        padding: 0px;
+        
+    }
+.con{   
+    box-shadow: 10px 10px -10px black;
+    top:10px;
+    border: 1px solid blue;
+}
+.slider{
+    width:100%;
+    -webkit-appearance:none;
+    height: 10px;
+    border-radius: 5px;
+    background: #40c4ff;
+    box-shadow: 0px 1px 1px 0.5px darkgray;
+    border:0px;
+    outline: none;
+}
+.slider::-webkit-slider-thumb{
+    -webkit-appearance:none;
+    appearacne:none;
+    width:20px;
+    height:20px;
+    border:0px;
+    background: white;
+    border-radius:50%;
+    cursor: pointer;
+}
+#bmi
+{
+    width:40%;
+
+    padding:50px;
+    box-shadow: 0px 20px 15px darkgray;
+    border-radius: 10px;
+    margin:20px;
+}
+.skin
+{
+    width:40%;
+    padding: 10px;
+    display: block;
+}
+.container
+{
+    
+}
+
+.tcolor{
+    color:#40c4ff;
+}
+.exe{
+    padding-top:100px;
+}
+.imgframe
+{
+    position: relative;
+    padding:10px;
+    display:inline-flex;
+    flex-direction: row;
+    width:100%;
+    background-color: white; 
+    box-shadow: 0px 20px 15px darkgray;
+    align-self: left;
+   
+}
